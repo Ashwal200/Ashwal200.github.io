@@ -41,25 +41,32 @@ document.addEventListener("DOMContentLoaded", function () {
             imgSrc: "/assets/img/Webapp.png",
             title: "Real-time Code Collaboration",
             description: "This React application enables real-time code collaboration between clients using sockets for communication.",
-            githubLink: "https://github.com/Ashwal200/Web-App"
+            githubLink: "https://github.com/Ashwal200/Web-App",
+            languages: ['Javascript', 'React' , 'Flask' , 'Render']
         },
         {
             imgSrc: "/assets/img/2better.png",
             title: "2Better App",
             description: "An innovative Android app for enhanced productivity and well-being, featuring task organization, habit tracking, and motivation in a user-friendly interface.",
-            githubLink: "https://github.com/Ashwal200/2Better"
+            githubLink: "https://github.com/Ashwal200/2Better",
+            languages: ['Javascript', 'React' , 'Firebase' , 'Expo']
         },
         {
             imgSrc: "/assets/img/cluster.png",
             title: "NLP Sentence Grouping",
             description: "This project utilizes NLP techniques such as K-means, Word2Vec, LDA, and TransformSentence to cluster claim sentences from URLs, providing categorized titles for efficient data organization.",
-            githubLink: "https://github.com/Ashwal200/Clustering-Sentences"
+            githubLink: "https://github.com/Ashwal200/Clustering-Sentences",
+            languages: ['Python' , 'Flask']
         },
         
-        // Add more projects here
     ];
 
     const projectsContainer = document.getElementById("projects");
+
+    if (!projectsContainer) {
+        console.error("Projects container not found!");
+        return;
+    }
 
     projects.forEach(project => {
         const projectContainer = document.createElement("div");
@@ -76,10 +83,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const projectTitle = document.createElement("h4");
         projectTitle.textContent = project.title;
 
-        const projectText = document.createElement("p");
+        const projectText = document.createElement("div");
+        projectText.classList.add("deco");
         projectText.textContent = project.description;
 
-        // Add click event listener to open GitHub link
+
+
+
         projectContainer.addEventListener("click", function() {
             window.open(project.githubLink, "_blank");
         });
@@ -89,7 +99,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
         projectContainer.appendChild(projectImage);
         projectContainer.appendChild(projectDescription);
+        
+        // Create a box for each language if they exist
+        if (project.languages && project.languages.length > 0) {
+            const languageBoxContainer = document.createElement("div");
+            languageBoxContainer.classList.add("language-box-container");
 
+            project.languages.forEach(language => {
+                const languageBox = document.createElement("div");
+                languageBox.classList.add("language-box");
+                languageBox.textContent = language;
+                languageBoxContainer.appendChild(languageBox);
+            });
+
+            projectDescription.appendChild(languageBoxContainer);
+        }
         projectsContainer.appendChild(projectContainer);
     });
 });

@@ -110,7 +110,8 @@ body {
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: box-shadow 0.3s ease-in-out;
-  width: 40%; 
+  width: 40%;
+  cursor: pointer; 
 }
 .project-container:hover {
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -130,6 +131,29 @@ body {
 }
 .project-container:hover .project-description {
   opacity: 1;
+}
+.deco {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #bd5d38; 
+}
+.language-box {
+  background-color: #f8f7f6;
+  padding: 3px 8px;
+  border-radius: 15px;
+  font-size: 11px;
+  color: #000;
+  margin-right: 5px; 
+  width: 18%;
+  text-align: center;
+}
+.language-box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  margin-top: auto; 
+  padding-bottom: 30px; 
+  padding-top: 20px;
 }
 hr {
   margin: 1rem 0;
@@ -197,8 +221,9 @@ h6, .h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
-  color: #bd5d38; 
 }
+
+
 
 abbr[title] {
   -webkit-text-decoration: underline dotted;
@@ -519,7 +544,7 @@ progress {
 }
 
 .lead {
-  font-size: 1.25rem;
+  font-size: 1.8rem;
   font-weight: 300;
 }
 
