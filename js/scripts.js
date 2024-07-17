@@ -58,7 +58,13 @@ document.addEventListener("DOMContentLoaded", function () {
             githubLink: "https://github.com/Ashwal200/Clustering-Sentences",
             languages: ['Python' , 'Flask']
         },
-        
+        {
+            imgSrc: "/assets/img/protocol.png",
+            title: "Network Protocols Exploration",
+            description: "Implement and explore DNS, DHCP, HTTP, and redirect servers to demonstrate their crucial roles in internet communication.",
+            githubLink: "https://github.com/Ashwal200/Network-Protocols-Exploration/tree/main",
+            languages: ['C']
+        },
     ];
 
     const projectsContainer = document.getElementById("projects");
