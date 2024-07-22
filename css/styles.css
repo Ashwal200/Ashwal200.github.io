@@ -111,7 +111,11 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: box-shadow 0.3s ease-in-out;
   width: 40%;
-  cursor: pointer; 
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+ 
 }
 .project-container:hover {
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -7706,10 +7710,12 @@ textarea.form-control-lg {
 
 .mb-0 {
   margin-bottom: 0 !important;
+  font-size: larger;
 }
 
 .mb-1 {
   margin-bottom: 0.25rem !important;
+
 }
 
 .mb-2 {
@@ -7717,6 +7723,7 @@ textarea.form-control-lg {
 }
 
 .mb-3 {
+  color: #bd5d38;
   margin-bottom: 1rem !important;
 }
 

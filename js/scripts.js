@@ -33,7 +33,6 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
-// Your script file: your-script.js
 
 document.addEventListener("DOMContentLoaded", function () {
     const projects = [
