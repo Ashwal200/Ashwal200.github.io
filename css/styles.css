@@ -103,20 +103,31 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+/* Container for all project items */
+#projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between items */
+}
 
+/* Individual project container */
 .project-container {
   position: relative;
   overflow: hidden;
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: box-shadow 0.3s ease-in-out;
-  width: 40%;
+  width: calc(50% - 20px); /* Adjust for gaps */
   cursor: pointer;
- 
 }
+
+/* Hover effect for project container */
 .project-container:hover {
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transform: scale(1.10);
 }
+
+/* Description overlay on hover */
 .project-description {
   position: absolute;
   top: 0;
@@ -130,14 +141,20 @@ body {
   transition: opacity 0.3s ease-in-out;
   text-align: center;
 }
+
+/* Show description on hover */
 .project-container:hover .project-description {
   opacity: 1;
 }
+
+/* Style for description text */
 .deco {
   margin-top: 0;
   margin-bottom: 1rem;
   color: #bd5d38; 
 }
+
+/* Style for language tags */
 .language-box {
   background-color: #f8f7f6;
   padding: 3px 8px;
@@ -148,6 +165,8 @@ body {
   width: 18%;
   text-align: center;
 }
+
+/* Container for language tags */
 .language-box-container {
   display: flex;
   flex-wrap: wrap;
@@ -156,6 +175,15 @@ body {
   padding-bottom: 30px; 
   padding-top: 20px;
 }
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .project-container {
+    width: 100%; /* Full width on smaller screens */
+    margin-right: 0; /* Remove right margin on smaller screens */
+  }
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;
@@ -545,7 +573,7 @@ progress {
 }
 
 .lead {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   font-weight: 300;
 }
 
@@ -657,7 +685,8 @@ progress {
 
 .img-fluid {
   max-width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
 }
 
 .img-thumbnail {
@@ -1287,6 +1316,10 @@ progress {
   .gy-md-5 {
     --bs-gutter-y: 3rem;
   }
+  .col-con {
+    flex: 0 0 auto;
+    width: 55%;
+  }
 }
 @media (min-width: 992px) {
   .col-lg {
@@ -1337,7 +1370,7 @@ progress {
     width: 25%;
   }
   .col-lg-4 {
-    float: right;
+    float: left;
     margin-right: -150px; 
     max-width: 300px; 
   }
@@ -7705,6 +7738,10 @@ textarea.form-control-lg {
   margin-right: auto !important;
 }
 
+.mb-00 {
+  margin-bottom: 0 !important;
+  font-size: 80px;
+}
 .mb-0 {
   margin-bottom: 0 !important;
   font-size: larger;
@@ -11014,7 +11051,7 @@ section.resume-section {
   max-width: 75rem;
 }
 section.resume-section .resume-section-content {
-  width: 100%;
+  width: 80%;
 }
 
 @media (min-width: 768px) {
