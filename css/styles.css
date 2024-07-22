@@ -112,9 +112,6 @@ body {
   transition: box-shadow 0.3s ease-in-out;
   width: 40%;
   cursor: pointer;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
  
 }
 .project-container:hover {
