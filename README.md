@@ -95,7 +95,13 @@ source .venv/bin/activate
 venv\Scripts\activate
 
 # Install dependencies
+python -m pip install --upgrade pip
 pip install -r requirements.txt
+
+# Edit `utils.py` and set your Telegram credentials:
+# near the top of utils.py
+TELEGRAM_TOKEN   = "your_bot_token_here"
+TELEGRAM_CHAT_ID = "your_chat_id_here"
 
 # Run the app
 python app.py
