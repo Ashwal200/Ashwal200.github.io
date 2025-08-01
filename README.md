@@ -1,11 +1,20 @@
-# Zap Price Forecast
+# AI Price Forecast
 
 ## Overview of the Capability
-stay the same, or rise—so they hesitate, overpay, or keep checking manually. Volatility from discounts, stock changes, and seasonality creates uncertainty: users either wait too long and miss deals or buy too early and regret it, suppressing conversions and reducing trust and engagement.
 
-Zap Price Forecast solves that by giving shoppers a clear, data driven answer to “Should I buy now?” It shows a 7-day price forecast for a product, highlights expected direction with confidence, and lets users set a target price and contact method. When conditions match (current price or forecasted drop), the user is notified—eliminating the need for constant manual watch.
+**What it does:**  
+AI Price Forecast gives shoppers a short-term (7-day) predictive view of a product’s price trajectory and turns that signal into clear, actionable guidance—e.g., “Buy now,” “Wait ~2 days for ~5% drop,” or “Price likely stable.” Users can set a target price and opt into alerts; the system notifies them when current or forecasted conditions meet their goal.
 
-Framed as a user story: As a shopper, I want to know whether to buy now or wait, so I can get the best price without continually monitoring changes or risking overpaying. ZapSmart turns passive price observation into proactive, personalized timing guidance, speeding up decisions and improving platform loyalty.
+**User value:**  
+Reduces hesitation and decision friction by replacing guesswork with data-driven timing advice. Personalized tracking and alerts keep users engaged without forcing constant manual checking.
+
+**Key components:**  
+- **Data ingestion:** Continuously collects historical prices, stock/seller signals, past promotion patterns, and calendar context (holidays, seasonality).  
+- **Forecasting engine:** Machine learning models predict the price path over the next week, estimating direction and magnitude.  
+- **Signal generation:** Converts raw forecasts into user-facing recommendations with confidence indicators.  
+- **Tracking & alerting:** Allows users to specify a desired price; monitors real-time and predicted prices and sends notifications when thresholds are met.  
+
+
 ## Assumptions and Dataset
 - **Data acquisition:** In a full system, prices and availability would be fetched live from Zap/merchant pages using web scraping (e.g., BeautifulSoup with proper pagination, headers, retries, and optional headless rendering); in this prototype we simplified by hardcoding query parameters and sample data to keep scope small and focus on the forecasting/alert logic.
 - **Notifications:** Prototype uses a Telegram bot with hardcoded tokens for simplicity and speed—it's easy to wire up, delivers instantly, and can target any user for demo purposes. In a full system, the same alert logic is channel agnostic: you could send via email, SMS, push/web app notification, WhatsApp, etc., with proper validation of the user’s contact (phone, email, device token) and user preference.
